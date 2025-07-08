@@ -49,14 +49,14 @@ const Index = () => {
   const currentVid = videos[currentVideo];
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white flex">
       {/* Боковая панель навигации */}
-      <div className="w-64 bg-gray-900 p-4 space-y-6">
-        <div className="flex items-center space-x-2 mb-8">
-          <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <Icon name="Play" size={20} className="text-white" />
+      <div className="w-64 bg-gray-950/80 backdrop-blur-sm border-r border-gray-800 p-6 space-y-6">
+        <div className="flex items-center space-x-3 mb-10">
+          <div className="w-10 h-10 bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+            <Icon name="Play" size={22} className="text-white" />
           </div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-400 bg-clip-text text-transparent">
             ТипТок
           </h1>
         </div>
@@ -95,8 +95,11 @@ const Index = () => {
         </div>
 
         {/* Тренды */}
-        <Card className="bg-gray-800 border-gray-700 p-4">
-          <h3 className="font-semibold mb-3 text-white">🔥 Тренды</h3>
+        <Card className="bg-gray-800/50 backdrop-blur border-gray-700/50 p-5">
+          <h3 className="font-semibold mb-4 text-white flex items-center">
+            <span className="text-orange-400 mr-2">🔥</span>
+            Тренды
+          </h3>
           <div className="space-y-3">
             {trends.map((trend, index) => (
               <div key={index} className="flex justify-between items-center">
@@ -120,8 +123,11 @@ const Index = () => {
         </Card>
 
         {/* Статистика пользователя */}
-        <Card className="bg-gray-800 border-gray-700 p-4">
-          <h3 className="font-semibold mb-3 text-white">💰 Ваша статистика</h3>
+        <Card className="bg-gray-800/50 backdrop-blur border-gray-700/50 p-5">
+          <h3 className="font-semibold mb-4 text-white flex items-center">
+            <span className="text-green-400 mr-2">💰</span>
+            Ваша статистика
+          </h3>
           <div className="space-y-2">
             <div className="flex justify-between">
               <span className="text-sm text-gray-400">Подписчики</span>
@@ -144,13 +150,13 @@ const Index = () => {
       {/* Основная лента видео */}
       <div className="flex-1 relative">
         <div className="h-screen overflow-hidden">
-          <div className="relative h-full bg-gradient-to-br from-purple-900/20 to-pink-900/20">
+          <div className="relative h-full bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10">
             {/* Видео контейнер */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full max-w-md h-full bg-gray-800 rounded-lg overflow-hidden relative">
+              <div className="w-full max-w-md h-full bg-gray-900/90 backdrop-blur-sm rounded-2xl overflow-hidden relative shadow-2xl border border-gray-700/30">
                 {/* Фейк видео */}
-                <div className="h-full bg-gradient-to-br from-pink-600 to-purple-700 flex items-center justify-center">
-                  <div className="text-center">
+                <div className="h-full bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 flex items-center justify-center relative overflow-hidden">
+                  <div className="text-center relative z-10">
                     <Icon
                       name={isPlaying ? "Pause" : "Play"}
                       size={48}
@@ -274,11 +280,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Индикатор прогресса */}
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-              <Progress value={65} className="w-48 h-1" />
-            </div>
-
             {/* Переключение видео */}
             <div className="absolute right-1/2 transform translate-x-1/2 bottom-4 flex space-x-4">
               <Button
@@ -309,7 +310,7 @@ const Index = () => {
       </div>
 
       {/* Правая панель аналитики */}
-      <div className="w-80 bg-gray-900 p-4 space-y-6">
+      <div className="w-80 bg-gray-950/80 backdrop-blur-sm border-l border-gray-800 p-6 space-y-6">
         <Card className="bg-gray-800 border-gray-700 p-4">
           <h3 className="font-semibold mb-3 text-white flex items-center">
             <Icon name="BarChart3" size={20} className="mr-2 text-pink-400" />
