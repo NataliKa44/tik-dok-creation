@@ -57,7 +57,7 @@ const Index = () => {
             <Icon name="Play" size={22} className="text-white" />
           </div>
           <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-400 bg-clip-text text-transparent">
-            ТипТоп
+            ТипТок
           </h1>
         </div>
 
